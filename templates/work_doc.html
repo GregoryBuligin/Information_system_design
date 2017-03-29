@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Рабочая документация</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<ol>
+    <li><a href="">Титульный лист</a></li>
+    <li><a href="">Общие данные</a></li>
+    {% for scheme, name in docs['schemes'] %}
+        <li><a href="{{ scheme }}">{{ name }}</a></li>
+    {% endfor %}
+    <li>Схема прохождения трактов
+        <ol>
+          {% for tract, name in docs['tracts'] %}
+              <li><a href="{{ tract }}">{{ name }}</a></li>
+          {% endfor %}
+        </ol>
+    </li>
+    <li>Схема кабельных соединений
+        <ol>
+          {% for cab_con, name in docs['cab_cons'] %}
+              <li><a href="{{ cab_con }}">{{ name }}</a></li>
+          {% endfor %}
+        </ol>
+    </li>
+    <li>Схема расположения оборудования в шкафах
+        <ol>
+          {% for equip, name in docs['equips'] %}
+              <li><a href="{{ equip }}">{{ name }}</a></li>
+          {% endfor %}
+        </ol>
+    </li>
+    <li>План расположения оборудования и кабельных трасс
+        <ol>
+          {% for room, name in docs['rooms'] %}
+              <li><a href="{{ room }}">{{ name }}</a></li>
+          {% endfor %}
+        </ol>
+    </li>
+    <li><a href="">Спецификация</a></li>
+    <li><a href="">Задание на проектирование</a></li>
+</ol>
+</body>
+</html>

@@ -1,0 +1,15 @@
+p, a, li {
+    font-size: 14px;
+}
+
+input {
+    font-size: 14px;
+}
+
+.sub-menu {
+    display: none;
+}
+
+.sub-menu.open {
+    display: block;
+}

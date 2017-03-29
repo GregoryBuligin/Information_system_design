@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сетевая документация</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <ol>
+      {% for doc, name in docs %}
+        <li><a href="{{ doc }}">{{ name }}</a></li>
+      {% endfor %}
+    </ol>
+</body>
+</html>
