@@ -23,10 +23,10 @@ def work_doc():
         elements.append(el)
 
     docs = {}
-    scheme = []
-    for doc in elements[0][2]:
-        scheme.append((elements[0][0] + '/' + doc, doc[:-4]))
-    docs['schemes'] = scheme
+    # scheme = []
+    # for doc in elements[0][2]:
+    #     scheme.append((elements[0][0] + '/' + doc, doc[:-4]))
+    # docs['schemes'] = scheme
 
     cab_con = []
     for doc in elements[1][2]:
@@ -34,8 +34,8 @@ def work_doc():
     docs['cab_cons'] = cab_con
 
     equip = []
-    for doc in elements[4][2]:
-        equip.append((elements[4][0] + '/' + doc, doc[:-4]))
+    for doc in elements[7][2]:
+        equip.append((elements[7][0] + '/' + doc, doc[:-4]))
     docs['equips'] = equip
 
     rooms = []
@@ -43,9 +43,24 @@ def work_doc():
         rooms.append((elements[2][0] + '/' + doc, doc[:-4]))
     docs['rooms'] = rooms
 
-    tracts = []
+    datas = []
     for doc in elements[3][2]:
-        tracts.append((elements[3][0] + '/' + doc, doc[:-4]))
+        datas.append((elements[3][0] + '/' + doc, doc[:-4]))
+    docs['datas'] = datas
+
+    specs = []
+    for doc in elements[5][2]:
+        specs.append((elements[5][0] + '/' + doc, doc[:-4]))
+    docs['specs'] = specs
+
+    tasks = []
+    for doc in elements[6][2]:
+        tasks.append((elements[6][0] + '/' + doc, doc[:-4]))
+    docs['tasks'] = tasks
+
+    tracts = []
+    for doc in elements[4][2]:
+        tracts.append((elements[4][0] + '/' + doc, doc[:-4]))
     docs['tracts'] = tracts
 
     return render_template('work_doc.html', docs=docs)

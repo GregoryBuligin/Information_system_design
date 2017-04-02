@@ -9,9 +9,11 @@
 <ol>
     <li><a href="">Титульный лист</a></li>
     <li><a href="">Общие данные</a></li>
-    {% for scheme, name in docs['schemes'] %}
-        <li><a href="{{ scheme }}">{{ name }}</a></li>
-    {% endfor %}
+      <ol>
+        {% for data, name in docs['datas'] %}
+        <li><a href="{{ data }}">{{ name }}</a></li>
+        {% endfor %}
+      </ol>
     <li>Схема прохождения трактов
         <ol>
           {% for tract, name in docs['tracts'] %}
@@ -40,8 +42,18 @@
           {% endfor %}
         </ol>
     </li>
-    <li><a href="">Спецификация</a></li>
-    <li><a href="">Задание на проектирование</a></li>
+    <li>Спецификация</li>
+      <ol>
+        {% for spec, name in docs['specs'] %}
+            <li><a href="{{ spec }}">{{ name }}</a></li>
+        {% endfor %}
+      </ol>
+    <li>Задание на проектирование</li>
+      <ol>
+        {% for task, name in docs['tasks'] %}
+            <li><a href="{{ task }}">{{ name }}</a></li>
+        {% endfor %}
+      </ol>
 </ol>
 </body>
 </html>
